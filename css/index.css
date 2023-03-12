@@ -1,0 +1,137 @@
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
+   background-color: #0e0e15;
+   color: #ffffff;
+}
+
+h1 {
+   padding: 10px 15px;
+}
+
+.content {
+   width: 80%;
+   min-width: 320px;
+   margin: 20px auto;
+   padding: 10px 15px;
+
+}
+
+.accordeon__input {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 0;
+   height: 0;
+   position: absolute;
+}
+
+.accordeon__item {
+   border-bottom: 2px solid #807f7f;
+   margin: 0;
+}
+
+.accordeon__content {
+   cursor: pointer;
+}
+
+.accordeon__title-box {
+   width: 100%;
+   display: flex;
+   color: #63a5db;
+   font-size: 16px;
+}
+
+.accordeon__title {
+   width: 100%;
+   display: block;
+   cursor: pointer;
+   padding: 10px 15px;
+   transition: color 0.3s ease-out;
+   font-size: 20px;
+   position: relative;
+   color: #63a5db;
+}
+
+.accordeon__img {
+   margin: 10px auto;
+   width: 260px;
+   display: none;
+}
+
+.accordeon__input:checked+.accordeon__content .accordeon__img {
+   display: block;
+}
+
+.accordeon__input:checked+.accordeon__content .accordeon__title {
+   color: #ffffff;
+}
+
+.accordeon__title::after {
+   content: "🞣";
+   right: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   position: absolute;
+}
+
+.accordeon__input:checked~.accordeon__content .accordeon__title::after {
+   transform: translateY(-50%) rotate(45deg);
+}
+
+@media screen and (min-width: 820px) {
+   .content {
+      min-width: 820px;
+   }
+
+   .accordeon__img {
+      width: 320px;
+   }
+
+   .accordeon__title {
+      font-size: 24px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   .content {
+      min-width: 1200px;
+   }
+
+   .accordeon__img {
+      width: 380px;
+   }
+
+   .accordeon__title {
+      font-size: 28px;
+   }
+
+   .accordeon__input:hover+.accordeon__content .accordeon__img {
+      display: block;
+   }
+
+   .accordeon__input:hover~.accordeon__content .accordeon__title::after {
+      transform: translateY(-50%) rotate(45deg);
+   }
+
+}
+
+@media screen and (min-width: 1920px) {
+   .content {
+      min-width: 1920px;
+   }
+
+   .accordeon__img {
+      width: 450px;
+   }
+
+   .accordeon__title {
+      font-size: 32px;
+   }
+}
